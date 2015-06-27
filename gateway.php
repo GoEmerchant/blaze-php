@@ -1,7 +1,7 @@
 <?php global $apiUrl, $result, $status, $version;
     class Transaction implements JsonSerializable {
         /**
-        * Transaction class: Ties into the PHP JSON Functions & makes them easily available to the Blaze class.
+        * Transaction class: Ties into the PHP JSON Functions & makes them easily available to the RestGateway class.
         * Using the class like so: $a = json_encode(new Transaction($txnarray), JSON_PRETTY_PRINT)
         * Will produce json data that the gateway should understand.
         */
@@ -15,9 +15,9 @@
     }
 
 
-class Blaze{
+class RestGateway{
     /**
-    * Blaze Class: A library of functions used to call the 1stPayBlaze web service.
+    * RestGateway Class: A library of functions used to call the 1stPayBlaze web service.
     * This class is required for every PHP web page making a call to 1stPayBlaze. 
     * This class/file contains all allowed executable methods.
     * Please refer to the gateway documentation web page for specifics on what parameters to use for each call.
@@ -423,5 +423,5 @@ class Blaze{
         catch (Exception $e){var_dump($e->getMessage());}
         }
 }
-$Blaze = new Blaze();
+$RestGateway = new RestGateway();
 ?>
